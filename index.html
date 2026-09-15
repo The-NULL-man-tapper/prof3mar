@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | عمار جمال علي اسماعيل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+    --bg0:#0a0a0f;--bg1:#111118;--bg2:#16161f;--bg2h:#1c1c28;
+    --t0:#f0f0f5;--t1:#a0a0b8;--t2:#6a6a80;
+    --ab:#2196F3;--abg:rgba(33,150,243,0.3);--ag:#00e676;--ags:rgba(0,230,118,0.15);
+    --ao:#ff9100;--aos:rgba(255,145,0,0.15);
+    --ac:#00e5ff;--acs:rgba(0,229,255,0.12);
+    --al:#ff6d00;--als:rgba(255,109,0,0.12);
+    --av:#7c4dff;--avs:rgba(124,77,255,0.12);
+    --bd:rgba(255,255,255,0.06);--bdh:rgba(255,255,255,0.12);
+    --sh:0 4px 24px rgba(0,0,0,0.4);--r:12px;--rl:20px;
+    --tr:0.3s cubic-bezier(0.4,0,0.2,1);
+    --fa:'Cairo',sans-serif;--fe:'Inter',sans-serif;
+}
+.light-mode {
+    --bg0:#f5f5fa;--bg1:#eeeeff;--bg2:#ffffff;--bg2h:#f8f8ff;
+    --t0:#1a1a2e;--t1:#4a4a60;--t2:#8a8a9f;
+    --bd:rgba(0,0,0,0.08);--bdh:rgba(0,0,0,0.15);--sh:0 4px 24px rgba(0,0,0,0.08);
+    --acs:rgba(0,229,255,0.08);--als:rgba(255,109,0,0.08);--avs:rgba(124,77,255,0.08);
+    --ags:rgba(0,230,118,0.08);--aos:rgba(255,145,0,0.08);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--fa);background:var(--bg0);color:var(--t0);line-height:1.8;overflow-x:hidden;transition:background var(--tr),color var(--tr)}
+
+/* Tech Grid */
+.tech-bg{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.03}
+.light-mode .tech-bg{opacity:.02}
+.tech-bg svg{width:100%;height:100%}
+
+/* Navbar */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);transition:all var(--tr)}
+.light-mode .navbar{background:rgba(245,245,250,.9)}
+.nav-brand{font-size:1.3rem;font-weight:700;color:var(--ab);text-decoration:none;letter-spacing:-.5px}
+.nav-brand span{color:var(--t0);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:.5rem;list-style:none}
+.nav-links a{color:var(--t1);text-decoration:none;font-size:.85rem;font-weight:500;padding:.5rem .85rem;border-radius:8px;transition:all var(--tr)}
+.nav-links a:hover,.nav-links a.active{color:var(--ab);background:rgba(33,150,243,.08)}
+.nav-links a i{margin-left:.3rem;font-size:.75rem}
+.nav-actions{display:flex;align-items:center;gap:.75rem}
+.theme-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--bd);background:var(--bg2);color:var(--t1);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all var(--tr)}
+.theme-toggle:hover{border-color:var(--ab);color:var(--ab)}
+.lang-toggle{padding:.4rem .8rem;border-radius:8px;border:1px solid var(--bd);background:var(--bg2);color:var(--t1);cursor:pointer;font-size:.78rem;font-weight:600;font-family:var(--fe);transition:all var(--tr)}
+.lang-toggle:hover{border-color:var(--ab);color:var(--ab)}
+.nav-hamburger{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--bd);background:var(--bg2);color:var(--t1);cursor:pointer;align-items:center;justify-content:center;font-size:1.1rem}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--bg1);border-bottom:1px solid var(--bd);padding:1rem 2rem;z-index:999;flex-direction:column;gap:.5rem}
+.mobile-menu.active{display:flex}
+.mobile-menu a{color:var(--t1);text-decoration:none;font-size:.95rem;padding:.75rem 1rem;border-radius:8px;transition:all var(--tr)}
+.mobile-menu a:hover{color:var(--ab);background:rgba(33,150,243,.08)}
+
+/* Sections */
+section{position:relative;z-index:1}
+.sc{max-width:1200px;margin:0 auto;padding:5rem 2rem}
+.sh{text-align:center;margin-bottom:3.5rem}
+.si{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.2rem}
+.st{font-size:2.2rem;font-weight:800;margin-bottom:.6rem}
+.ss{color:var(--t1);font-size:1rem;max-width:600px;margin:0 auto;line-height:1.9}
+.sd{width:60px;height:3px;margin:1.2rem auto 0;border-radius:3px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-content{text-align:center;max-width:800px;padding:0 2rem;position:relative;z-index:2}
+.hero-avatar{width:150px;height:150px;border-radius:50%;border:3px solid var(--ab);margin:0 auto 2rem;display:flex;align-items:center;justify-content:center;background:var(--bg2);position:relative;overflow:hidden}
+.hero-avatar .ap{font-size:3.5rem;color:var(--ab);opacity:.6}
+.hero-avatar::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;border-top-color:var(--ac);animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-name{font-size:3rem;font-weight:900;margin-bottom:.8rem;background:linear-gradient(135deg,var(--t0),var(--ab));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title{font-size:1.15rem;color:var(--t1);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.hero-title .tt{padding:.4rem 1rem;border-radius:20px;font-size:.9rem;font-weight:600;display:inline-flex;align-items:center;gap:.4rem}
+.tt.cyber{background:var(--acs);color:var(--ac);border:1px solid rgba(0,229,255,.2)}
+.tt.cali{background:var(--als);color:var(--al);border:1px solid rgba(255,109,0,.2)}
+.tt.game{background:var(--avs);color:var(--av);border:1px solid rgba(124,77,255,.2)}
+.hero-bio{color:var(--t1);font-size:1.05rem;line-height:2;max-width:650px;margin:0 auto 2.5rem}
+.hero-buttons{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:3rem;flex-wrap:wrap}
+.btn-p{padding:.75rem 2rem;border-radius:10px;background:linear-gradient(135deg,var(--ab),#1976D2);color:#fff;font-size:.95rem;font-weight:600;font-family:var(--fa);border:none;cursor:pointer;transition:all var(--tr);display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--abg)}
+.btn-o{padding:.75rem 2rem;border-radius:10px;background:transparent;color:var(--ab);font-size:.95rem;font-weight:600;font-family:var(--fa);border:1.5px solid var(--ab);cursor:pointer;transition:all var(--tr);display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+.btn-o:hover{background:var(--ab);color:#fff;transform:translateY(-2px)}
+.hero-indicators{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.indicator{display:flex;align-items:center;gap:.5rem;color:var(--t2);font-size:.88rem;font-weight:500}
+.indicator i{color:var(--ag);font-size:.7rem}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.skill-item{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:1.2rem 1.5rem;transition:all var(--tr)}
+.skill-item:hover{border-color:var(--bdh);transform:translateY(-2px)}
+.skill-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.skill-name{font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
+.skill-name i{font-size:.8rem}
+.skill-percent{font-size:.78rem;color:var(--t2);font-family:var(--fe)}
+.skill-bar{height:6px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.light-mode .skill-bar{background:rgba(0,0,0,.05)}
+.skill-fill{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1);width:0}
+
+/* Tools */
+.tools-list{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.tool-tag{padding:.3rem .8rem;border-radius:6px;font-size:.78rem;font-weight:500;border:1px solid var(--bd);background:rgba(255,255,255,.04);color:var(--t2)}
+.light-mode .tool-tag{background:rgba(0,0,0,.03)}
+
+/* Certs */
+.certs-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+.cert-item{display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r)}
+.cert-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:var(--acs);color:var(--ac)}
+.cert-details h4{font-size:.9rem;font-weight:700}
+.cert-details p{color:var(--t1);font-size:.78rem}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin:2rem 0}
+.project-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:1.8rem;transition:all var(--tr);position:relative;overflow:hidden}
+.project-card:hover{border-color:var(--bdh);transform:translateY(-3px);box-shadow:var(--sh)}
+.project-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .75rem;border-radius:6px;font-size:.72rem;font-weight:600;margin-bottom:1rem}
+.badge-cyber{background:var(--acs);color:var(--ac)}
+.badge-game{background:var(--avs);color:var(--av)}
+.project-name{font-size:1.15rem;font-weight:700;margin-bottom:.6rem}
+.project-desc{color:var(--t1);font-size:.88rem;line-height:1.8;margin-bottom:1rem}
+.project-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.project-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.pskill-tag{padding:.2rem .6rem;border-radius:5px;font-size:.72rem;font-weight:500;background:var(--ags);color:var(--ag)}
+.project-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--ab);text-decoration:none;font-size:.85rem;font-weight:600;transition:all var(--tr)}
+.project-link:hover{color:#1976D2}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:2rem 0}
+.stat-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;text-align:center;transition:all var(--tr)}
+.stat-card:hover{border-color:var(--bdh);transform:translateY(-2px)}
+.stat-value{font-size:1.8rem;font-weight:800;color:var(--al);font-family:var(--fe)}
+.stat-label{font-size:.82rem;color:var(--t1);margin-top:.3rem}
+
+/* Achievements */
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.achievement-card{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 1.5rem;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);transition:all var(--tr)}
+.achievement-card:hover{border-color:var(--bdh);transform:translateY(-2px)}
+.achievement-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.achievement-icon.trophy{background:rgba(255,193,7,.12);color:#ffc107}
+.achievement-icon.star{background:rgba(0,230,118,.12);color:var(--ag)}
+.achievement-icon.medal{background:rgba(255,109,0,.12);color:var(--al)}
+.achievement-info h4{font-size:.95rem;font-weight:700}
+.achievement-info p{color:var(--t1);font-size:.78rem}
+
+/* Education */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin:2rem 0}
+.education-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:1.8rem;transition:all var(--tr)}
+.education-card:hover{border-color:var(--bdh)}
+.edu-row{display:flex;align-items:center;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--bd)}
+.edu-row:last-child{border-bottom:none}
+.edu-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.9rem;background:var(--acs);color:var(--ac);flex-shrink:0}
+.edu-details h4{font-size:.88rem;font-weight:700}
+.edu-details p{color:var(--t1);font-size:.78rem}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0}
+.contact-info{display:flex;flex-direction:column;gap:1rem}
+.contact-item{display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);transition:all var(--tr)}
+.contact-item:hover{border-color:var(--bdh)}
+.contact-item-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;background:var(--abg);color:var(--ab);flex-shrink:0}
+.contact-item-info h5{font-size:.78rem;font-weight:600;color:var(--t2)}
+.contact-item-info p{font-size:.88rem;color:var(--t0)}
+.contact-item-info a{color:var(--ab);text-decoration:none}
+.social-links{display:flex;gap:.75rem;margin-top:1rem}
+.social-link{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;background:var(--bg2);border:1px solid var(--bd);color:var(--t1);text-decoration:none;transition:all var(--tr)}
+.social-link:hover{border-color:var(--ab);color:var(--ab);transform:translateY(-2px)}
+.contact-form{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:2rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--t1);margin-bottom:.4rem}
+.form-group input,.form-group textarea{width:100%;padding:.7rem 1rem;border-radius:8px;border:1.5px solid var(--bd);background:var(--bg1);color:var(--t0);font-size:.9rem;font-family:var(--fa);transition:all var(--tr)}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--ab);box-shadow:0 0 0 3px var(--abg)}
+.form-group textarea{min-height:120px;resize:vertical}
+.form-submit{padding:.75rem 2rem;border-radius:10px;background:linear-gradient(135deg,var(--ab),#1976D2);color:#fff;font-size:.95rem;font-weight:600;font-family:var(--fa);border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:all var(--tr)}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--abg)}
+.contact-closing{text-align:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--bd)}
+.contact-closing p{color:var(--t1);font-size:.9rem}
+
+/* Footer */
+.footer{text-align:center;padding:2rem;background:var(--bg1);border-top:1px solid var(--bd)}
+.footer p{color:var(--t1);font-size:.85rem}
+.footer .heart{color:#f44336;animation:hb 1.5s ease infinite}
+@keyframes hb{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+</style>
+</head>
+<body>
+
+<!-- Tech Grid Background -->
+<div class="tech-bg"><svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(33,150,243,0.15)" stroke-width="0.5"></path></pattern></defs><rect width="100%" height="100%" fill="url(#g)"></rect></svg></div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <a href="#home" class="nav-brand">عمار جمال علي اسماعيل<span>.dev</span></a>
+    <ul class="nav-links">
+        <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="#cyber"><i class="fas fa-shield-halved"></i> الأمن</a></li>
+        <li><a href="#calisthenics"><i class="fas fa-dumbbell"></i> الكالستنكس</a></li>
+        <li><a href="#gamedev"><i class="fas fa-gamepad"></i> الألعاب</a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i> التعليم</a></li>
+        <li><a href="#achievements"><i class="fas fa-trophy"></i> الإنجازات</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> التواصل</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()" title="تبديل المظهر"><i class="fas fa-sun"></i></button>
+        <button class="lang-toggle" onclick="toggleLang()">EN</button>
+        <button class="nav-hamburger" onclick="toggleMobile()"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobile()">الرئيسية</a>
+    <a href="#cyber" onclick="closeMobile()">الأمن السيبراني</a>
+    <a href="#calisthenics" onclick="closeMobile()">الكالستنكس</a>
+    <a href="#gamedev" onclick="closeMobile()">تطوير الألعاب</a>
+    <a href="#education" onclick="closeMobile()">التعليم</a>
+    <a href="#achievements" onclick="closeMobile()">الإنجازات</a>
+    <a href="#contact" onclick="closeMobile()">التواصل</a>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-avatar"><div class="ap"><i class="fas fa-user-astronaut"></i></div></div>
+        <h1 class="hero-name reveal">عمار جمال علي اسماعيل</h1>
+        <div class="hero-title reveal">
+            <span class="tt cyber"><i class="fas fa-shield-halved"></i> أمن سيبراني</span>
+            <span class="tt cali"><i class="fas fa-dumbbell"></i> كالستنكس</span>
+            <span class="tt game"><i class="fas fa-gamepad"></i> مطور ألعاب</span>
+        </div>
+        <p class="hero-bio reveal">شغوف بثلاثة عوالم: حماية الأنظمة والبيانات، وتحدي الجسد عبر الكالستنكس، وصناعة عوالم رقمية ممتعة. أسعى لدمج التقنية مع اللياقة البدنية والإبداع في تجربة واحدة فريدة.</p>
+        <div class="hero-buttons reveal">
+            <a href="#cyber" class="btn-p"><i class="fas fa-shield-halved"></i> استعرض أعمالي</a>
+            <a href="#contact" class="btn-o"><i class="fas fa-envelope"></i> تواصل معي</a>
+        </div>
+        <div class="hero-indicators reveal"><span class="indicator"><i class="fas fa-circle"></i> جامعة القلم</span><span class="indicator"><i class="fas fa-circle"></i> الأمن السبراني والشبكات</span><span class="indicator"><i class="fas fa-circle"></i> الثاني</span></div>
+    </div>
+</section>
+
+<!-- ==================== CYBERSECURITY ==================== -->
+<section id="cyber">
+    <div class="sc">
+        <div class="sh reveal">
+            <div class="si" style="background:var(--acs);color:var(--ac);"><i class="fas fa-shield-halved"></i></div>
+            <h2 class="st">الأمن السيبراني</h2>
+            <p class="ss">مساري في الأمن السيبراني يجمع بين الدراسة الأكاديمية والتطبيق العملي.</p>
+            <div class="sd" style="background:linear-gradient(90deg,var(--ac),#00b8d4);"></div>
+        </div>
+
+        <div class="skills-grid reveal"><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-shield-halved" style="color:var(--ac)"></i> اختبار الاختراق</span><span class="skill-percent">30%</span></div><div class="skill-bar"><div class="skill-fill" data-width="30" style="background: linear-gradient(90deg,var(--ac),#00b8d4); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-shield-halved" style="color:var(--ac)"></i> أمن الشبكات</span><span class="skill-percent">75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75" style="background: linear-gradient(90deg,var(--ac),#00b8d4); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-shield-halved" style="color:var(--ac)"></i> تحليل البرمجيات الخبيثة</span><span class="skill-percent">50%</span></div><div class="skill-bar"><div class="skill-fill" data-width="50" style="background: linear-gradient(90deg,var(--ac),#00b8d4); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-shield-halved" style="color:var(--ac)"></i> أمن التطبيقات</span><span class="skill-percent">20%</span></div><div class="skill-bar"><div class="skill-fill" data-width="20" style="background: linear-gradient(90deg,var(--ac),#00b8d4); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-shield-halved" style="color:var(--ac)"></i> التحليل الجنائي</span><span class="skill-percent">20%</span></div><div class="skill-bar"><div class="skill-fill" data-width="20" style="background: linear-gradient(90deg,var(--ac),#00b8d4); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-shield-halved" style="color:var(--ac)"></i> أمن المعلومات</span><span class="skill-percent">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80" style="background: linear-gradient(90deg,var(--ac),#00b8d4); width: 0px;"></div></div></div></div>
+        <div class="tools-list reveal"><span class="tool-tag" style="background:var(--acs);color:var(--ac);border-color:rgba(0,229,255,.15)">Kali Linux</span><span class="tool-tag" style="background:var(--acs);color:var(--ac);border-color:rgba(0,229,255,.15)">Wireshark</span><span class="tool-tag" style="background:var(--acs);color:var(--ac);border-color:rgba(0,229,255,.15)">Nmap</span><span class="tool-tag" style="background:var(--acs);color:var(--ac);border-color:rgba(0,229,255,.15)">Metasploit</span></div>
+        <div class="certs-list reveal"></div>
+        <div class="projects-grid reveal"></div>
+    </div>
+</section>
+
+<!-- ==================== CALISTHENICS ==================== -->
+<section id="calisthenics" style="background:var(--bg1);">
+    <div class="sc">
+        <div class="sh reveal">
+            <div class="si" style="background:var(--als);color:var(--al);"><i class="fas fa-dumbbell"></i></div>
+            <h2 class="st">الكالستنكس</h2>
+            <p class="ss">أمارس الكالستنكس كأسلوب حياة يجمع بين القوة البدنية والانضباط العقلي.</p>
+            <div class="sd" style="background:linear-gradient(90deg,var(--al),#ff9100);"></div>
+        </div>
+
+        <div class="skills-grid reveal"><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> Planche</span><span class="skill-percent">45%</span></div><div class="skill-bar"><div class="skill-fill" data-width="45" style="background: linear-gradient(90deg,var(--al),#ff9100); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> Front Lever</span><span class="skill-percent">100%</span></div><div class="skill-bar"><div class="skill-fill" data-width="100" style="background: linear-gradient(90deg,var(--al),#ff9100); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> Muscle Up</span><span class="skill-percent">100%</span></div><div class="skill-bar"><div class="skill-fill" data-width="100" style="background: linear-gradient(90deg,var(--al),#ff9100); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> Handstand</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90" style="background: linear-gradient(90deg,var(--al),#ff9100); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> Human Flag</span><span class="skill-percent">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80" style="background: linear-gradient(90deg,var(--al),#ff9100); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> L-Sit</span><span class="skill-percent">100%</span></div><div class="skill-bar"><div class="skill-fill" data-width="100" style="background: linear-gradient(90deg,var(--al),#ff9100); width: 0px;"></div></div></div><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> front lever touch</span><span class="skill-percent">30%</span></div><div class="skill-bar"><div class="skill-fill" data-width="30" style="background: linear-gradient(90deg,var(--al),#ff9100); width: 0px;"></div></div></div></div>
+        <div class="stats-grid reveal"><div class="stat-card"><div class="stat-value">سنة وبضعة اشهر</div><div class="stat-label">مدة التمرين</div></div><div class="stat-card"><div class="stat-value">متقدم</div><div class="stat-label">مستوى</div></div><div class="stat-card"><div class="stat-value">حركات متقدمة</div><div class="stat-label">التخصص</div></div></div>
+        <div class="achievements-grid reveal"><div class="achievement-card"><div class="achievement-icon medal"><i class="fas fa-medal"></i></div><div class="achievement-info"><h4>فرونت ليفير </h4><p>شعور التعلق على البار مع جسد يطير على الهواء شعور رائع , كانك نائم في الهواء — 2026</p></div></div></div>
+    </div>
+</section>
+
+<!-- ==================== GAME DEV ==================== -->
+<section id="gamedev">
+    <div class="sc">
+        <div class="sh reveal">
+            <div class="si" style="background:var(--avs);color:var(--av);"><i class="fas fa-gamepad"></i></div>
+            <h2 class="st">تطوير الألعاب</h2>
+            <p class="ss">أطور ألعاباً عظيمة تعتمد على الرعب والتوتر والخوف والالغاز. أركز على تصميم الميكانيكيات وبناء تجارب تفاعلية فريدة.</p>
+            <div class="sd" style="background:linear-gradient(90deg,var(--av),#b388ff);"></div>
+        </div>
+
+        <div class="skills-grid reveal"><div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-code" style="color:var(--av)"></i> يتم  العمل على المهارات</span><span class="skill-percent">10%</span></div><div class="skill-bar"><div class="skill-fill" data-width="10" style="background: linear-gradient(90deg,var(--av),#b388ff); width: 0px;"></div></div></div></div>
+        <div class="tools-list reveal"><span class="tool-tag" style="background:var(--avs);color:var(--av);border-color:rgba(124,77,255,.15)">Blender</span><span class="tool-tag" style="background:var(--avs);color:var(--av);border-color:rgba(124,77,255,.15)">unreal engine</span></div>
+        <div class="projects-grid reveal"><div class="project-card"><span class="project-badge badge-game"><i class="fas fa-gamepad"></i> تطوير ألعاب</span><h3 class="project-name">ASHES OF SIENCE</h3><p class="project-desc">لعبة رعب قصصية </p><div class="project-tools"><span class="tool-tag">blender</span><span class="tool-tag">unreal</span></div><div class="project-skills"><span class="pskill-tag">تصميم ألعاب</span></div><a href="------------" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> عرض</a></div><div class="project-card"><span class="project-badge badge-game"><i class="fas fa-gamepad"></i> تطوير ألعاب</span><h3 class="project-name">BACKROOMS</h3><p class="project-desc">لعبة back rooms تعتمد على ال jump scares بشكل قوي</p><div class="project-tools"><span class="tool-tag">blender</span><span class="tool-tag">unreal</span><span class="tool-tag">unity</span></div><div class="project-skills"><span class="pskill-tag">------------</span></div><a href="------------" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> عرض</a></div></div>
+    </div>
+</section>
+
+<!-- ==================== EDUCATION ==================== -->
+<section id="education" style="background:var(--bg1);">
+    <div class="sc">
+        <div class="sh reveal">
+            <div class="si" style="background:var(--abg);color:var(--ab);"><i class="fas fa-graduation-cap"></i></div>
+            <h2 class="st">التعليم</h2>
+            <p class="ss">أسعى لحصول تعليم شامل يجمع بين النظرية والتطبيق.</p>
+            <div class="sd" style="background:linear-gradient(90deg,var(--ab),var(--ag));"></div>
+        </div>
+
+        <div class="edu-grid reveal">
+            <div class="education-card"><h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-university" style="color:var(--ab);"></i> الجامعة</h3><div class="edu-row"><div class="edu-icon"><i class="fas fa-university"></i></div><div class="edu-details"><h4>جامعة القلم</h4><p>الأمن السبراني والشبكات — الثاني</p></div></div><div class="edu-row"><div class="edu-icon" style="background:var(--ags);color:var(--ag);"><i class="fas fa-chart-line"></i></div><div class="edu-details"><h4>المعدل التراكمي</h4><p>غير مهم</p></div></div></div>
+            <div class="education-card"><h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-user-graduate" style="color:var(--ag);"></i> النبذة الأكاديمية</h3><p style="color:var(--t1);font-size:.9rem;line-height:2;">أدرس حالياً تخصص الأمن السيبراني، وأسعى لتطوير مهاراتي في مجالات متعددة.</p></div>
+            <div class="education-card"><h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-heart" style="color:#f44336;"></i> القيم والشغف</h3><p style="color:var(--t1);font-size:.9rem;line-height:2;">التعلم المستمر هو مفتاح التفوق. كل يوم فرصة لاكتشاف شيء جديد وتطوير الذات.</p></div>
+        </div>
+
+        <div class="education-card reveal" style="margin-top:1.5rem;">
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-book" style="color:var(--ab);"></i> المواد الدراسية</h3>
+            <div class="edu-rows"></div>
+        </div>
+        <div class="education-card reveal" style="margin-top:1.5rem;">
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-certificate" style="color:var(--ag);"></i> الشهادات الأكاديمية</h3>
+            <div class="cert-rows"></div>
+        </div>
+        <div class="education-card reveal" style="margin-top:1.5rem;">
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-chalkboard-user" style="color:var(--ag);"></i> الورش والفعاليات</h3>
+            <div class="workshop-rows"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== ACHIEVEMENTS ==================== -->
+<section id="achievements">
+    <div class="sc">
+        <div class="sh reveal">
+            <div class="si" style="background:linear-gradient(135deg,rgba(255,193,7,.15),rgba(255,152,0,.1));color:#ffc107;"><i class="fas fa-trophy"></i></div>
+            <h2 class="st">الإنجازات</h2>
+            <p class="ss">محطات مميزة تعكس الجهد والالتزام في مختلف المجالات.</p>
+            <div class="sd" style="background:linear-gradient(90deg,#ffc107,var(--al));"></div>
+        </div>
+        <div class="achievements-grid reveal"><div class="achievement-card"><div class="achievement-icon trophy"><i class="fas fa-trophy"></i></div><div class="achievement-info"><h4>الكالستنكس</h4><p>العملاء — 2026</p></div></div></div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" style="background:var(--bg1);">
+    <div class="sc">
+        <div class="sh reveal">
+            <div class="si" style="background:var(--abg);color:var(--ab);"><i class="fas fa-envelope"></i></div>
+            <h2 class="st">تواصل معي</h2>
+            <p class="ss">أرحب بالتواصل للتعاون أو مشاركة الأفكار أو مناقشة المشاريع والفرص.</p>
+            <div class="sd" style="background:var(--ab);"></div>
+        </div>
+        <div class="contact-grid reveal">
+            <div class="contact-info" id="contactInfoList"><div class="contact-item"><div class="contact-item-icon"><i class="fas fa-user"></i></div><div class="contact-item-info"><h5>الاسم</h5><p>عمار</p></div></div><div class="contact-item"><div class="contact-item-icon"><i class="fas fa-envelope"></i></div><div class="contact-item-info"><h5>البريد</h5><p><a href="mailto:ammargamal2020925@gmail.com">ammargamal2020925@gmail.com</a></p></div></div><div class="contact-item"><div class="contact-item-icon"><i class="fas fa-phone"></i></div><div class="contact-item-info"><h5>الهاتف</h5><p>+967770757250</p></div></div><div class="contact-item"><div class="contact-item-icon"><i class="fas fa-location-dot"></i></div><div class="contact-item-info"><h5>المدينة</h5><p>ibb</p></div></div><div class="contact-item"><div class="contact-item-icon"><i class="fab fa-linkedin"></i></div><div class="contact-item-info"><h5>LinkedIn</h5><p><a href="#www.linkedin.com/in/ammargamal777">#www.linkedin.com/in/ammargamal777</a></p></div></div><div class="contact-item"><div class="contact-item-icon"><i class="fab fa-github"></i></div><div class="contact-item-info"><h5>GitHub</h5><p><a href="not to all">not to all</a></p></div></div><div class="contact-item"><div class="contact-item-icon"><i class="fas fa-gamepad"></i></div><div class="contact-item-info"><h5>Itch.io</h5><p><a href="no">no</a></p></div></div><div class="social-links"><a href="#www.linkedin.com/in/ammargamal777" class="social-link"><i class="fab fa-linkedin-in"></i></a><a href="not to all" class="social-link"><i class="fab fa-github"></i></a><a href="no" class="social-link"><i class="fas fa-gamepad"></i></a><a href="no" class="social-link"><i class="fab fa-x-twitter"></i></a><a href="i delete it" class="social-link"><i class="fab fa-instagram"></i></a></div></div>
+            <div class="contact-form">
+                <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-paper-plane" style="color:var(--ab);"></i> أرسل رسالة</h3>
+                <div class="form-group"><label>الاسم</label><input type="text" placeholder="أدخل اسمك"></div>
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="أدخل بريدك"></div>
+                <div class="form-group"><label>الموضوع</label><input type="text" placeholder="موضوع الرسالة"></div>
+                <div class="form-group"><label>الرسالة</label><textarea placeholder="اكتب رسالتك..."></textarea></div>
+                <button class="form-submit"><i class="fas fa-paper-plane"></i> إرسال</button>
+            </div>
+        </div>
+        <div class="contact-closing reveal"><p>يسعدني التواصل للتعاون أو مناقشة المشاريع والفرص.</p></div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer"><p>© 2026 عمار جمال علي اسماعيل — صُمّم بـ <span class="heart">❤</span> وشغف</p></footer>
+
+<!-- ==================== ADMIN UI ==================== -->
+
+
+
+
+
+
+<script>
+/* ===== Theme & Nav ===== */
+function toggleTheme(){document.body.classList.toggle('light-mode');var i=document.querySelector('.theme-toggle i');i.className=document.body.classList.contains('light-mode')?'fas fa-moon':'fas fa-sun'}
+var isArabic=true;function toggleLang(){isArabic=!isArabic;var h=document.documentElement,b=document.querySelector('.lang-toggle');if(isArabic){h.setAttribute('dir','rtl');h.setAttribute('lang','ar');b.textContent='EN'}else{h.setAttribute('dir','ltr');h.setAttribute('lang','en');b.textContent='\u0639\u0631\u0628\u064a'}}
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('active')}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('active')}
+
+/* ===== Scroll effects ===== */
+var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',function(){var cur='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-100)cur=s.id});navLinks.forEach(function(l){l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active')});var nb=document.getElementById('navbar');nb.style.boxShadow=window.scrollY>50?'0 2px 20px rgba(0,0,0,.3)':'none'});
+
+/* ===== Intersection Observers ===== */
+var revealObs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+var skillObs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){var w=en.target.getAttribute('data-width');en.target.style.width=w+'%'}})},{threshold:.5});
+
+function reobserve(){document.querySelectorAll('.reveal').forEach(function(el){el.classList.remove('visible');revealObs.observe(el)});document.querySelectorAll('.skill-fill').forEach(function(el){el.style.width='0';skillObs.observe(el)})}
+
+/* ===== Smooth scroll ===== */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+
+/* ===== DATA MODEL ===== */
+var DEFAULT_DATA={
+name:'[\u0627\u0644\u0627\u0633\u0645]',title:'\u0637\u0627\u0644\u0628 \u0623\u0645\u0646 \u0633\u064a\u0628\u0631\u0627\u0646\u064a | \u0644\u0627\u0639\u0628 \u0643\u0627\u0644\u064a\u0633\u062a\u064a\u0646\u064a\u0643 | \u0645\u0637\u0648\u0631 \u0623\u0644\u0639\u0627\u0628',
+bio:'\u0634\u063a\u0648\u0641 \u0628\u062b\u0644\u0627\u062b\u0629 \u0639\u0648\u0627\u0644\u0645: \u062d\u0645\u0627\u064a\u0629 \u0627\u0644\u0623\u0646\u0638\u0645\u0629 \u0648\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a\u060c \u0648\u062a\u062d\u062f\u064a \u0627\u0644\u062c\u0633\u062f \u0639\u0628\u0631 \u0627\u0644\u0643\u0627\u0644\u064a\u0633\u062a\u064a\u0646\u064a\u0643\u060c \u0648\u0635\u0646\u0627\u0639\u0629 \u0639\u0648\u0627\u0644\u0645 \u0631\u0642\u0645\u064a\u0629 \u0645\u0645\u062a\u0639\u0629. \u0623\u0633\u0639\u0649 \u0644\u062f\u0645\u062c \u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0645\u0639 \u0627\u0644\u0644\u064a\u0627\u0642\u0629 \u0627\u0644\u0628\u062f\u0646\u064a\u0629 \u0648\u0627\u0644\u0625\u0628\u062f\u0627\u0639 \u0641\u064a \u062a\u062c\u0631\u0628\u0629 \u0648\u0627\u062d\u062f\u0629 \u0641\u0631\u064a\u062f\u0629.',
+university:'[\u0627\u0633\u0645 \u0627\u0644\u062c\u0627\u0645\u0639\u0629]',major:'[\u0627\u0644\u062a\u062e\u0635\u0635]',level:'[\u0627\u0644\u0645\u0633\u062a\u0648\u0649]',gpa:'[\u0627\u0644\u0645\u0639\u062f\u0644]',
+academicBio:'\u0623\u062f\u0631\u0633 \u062d\u0627\u0644\u064a\u0627\u064b \u062a\u062e\u0635\u0635 \u0627\u0644\u0623\u0645\u0646 \u0627\u0644\u0633\u064a\u0628\u0631\u0627\u0646\u064a\u060c \u0648\u0623\u0633\u0639\u0649 \u0644\u062a\u0637\u0648\u064a\u0631 \u0645\u0647\u0627\u0631\u0627\u062a\u064a \u0641\u064a \u0645\u062c\u0627\u0644\u0627\u062a \u0645\u062a\u0639\u062f\u062f\u0629.',
+motto:'\u0627\u0644\u062a\u0639\u0644\u0645 \u0627\u0644\u0645\u0633\u062a\u0645\u0631 \u0647\u0648 \u0645\u0641\u062a\u0627\u062d \u0627\u0644\u062a\u0641\u0648\u0642. \u0643\u0644 \u064a\u0648\u0645 \u0641\u0631\u0635\u0629 \u0644\u0627\u0643\u062a\u0634\u0627\u0641 \u0634\u064a\u0621 \u062c\u062f\u064a\u062f \u0648\u062a\u0637\u0648\u064a\u0631 \u0627\u0644\u0630\u0627\u062a.',
+cyberOverview:'\u0645\u0633\u0627\u0631\u064a \u0641\u064a \u0627\u0644\u0623\u0645\u0646 \u0627\u0644\u0633\u064a\u0628\u0631\u0627\u0646\u064a \u064a\u062c\u0645\u0639 \u0628\u064a\u0646 \u0627\u0644\u062f\u0631\u0627\u0633\u0629 \u0627\u0644\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0648\u0627\u0644\u062a\u0637\u0628\u064a\u0642 \u0627\u0644\u0639\u0645\u0644\u064a.',
+cyberSkills:[{name:'\u0627\u062e\u062a\u0628\u0627\u0631 \u0627\u0644\u0627\u062e\u062a\u0631\u0627\u0642',percent:85},{name:'\u0623\u0645\u0646 \u0627\u0644\u0634\u0628\u0643\u0627\u062a',percent:75},{name:'\u062a\u062d\u0644\u064a\u0644 \u0627\u0644\u0628\u0631\u0645\u062c\u064a\u0627\u062a \u0627\u0644\u062e\u0628\u064a\u062b\u0629',percent:65},{name:'\u0623\u0645\u0646 \u0627\u0644\u062a\u0637\u0628\u064a\u0642\u0627\u062a',percent:70},{name:'\u0627\u0644\u062a\u062d\u0644\u064a\u0644 \u0627\u0644\u062c\u0646\u0627\u0626\u064a',percent:55},{name:'\u0623\u0645\u0646 \u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a',percent:80}],
+cyberTools:['Kali Linux','Wireshark','Burp Suite','Nmap','Metasploit','Ghidra'],
+cyberCerts:[{name:'[\u0627\u0644\u0634\u0647\u0627\u062f\u0629]',issuer:'[\u0627\u0644\u062c\u0647\u0629]',year:'[\u0627\u0644\u0633\u0646\u0629]'}],
+cyberProjects:[{name:'[\u0627\u0644\u0645\u0634\u0631\u0648\u0639]',desc:'[\u0627\u0644\u0648\u0635\u0641]',tools:'Kali, Nmap',skills:'\u0627\u062e\u062a\u0628\u0627\u0631 \u0627\u062e\u062a\u0631\u0627\u0642',link:'#'}],
+caliOverview:'\u0623\u0645\u0627\u0631\u0633 \u0627\u0644\u0643\u0627\u0644\u064a\u0633\u062a\u064a\u0646\u064a\u0643 \u0643\u0623\u0633\u0644\u0648\u0628 \u062d\u064a\u0627\u0629 \u064a\u062c\u0645\u0639 \u0628\u064a\u0646 \u0627\u0644\u0642\u0648\u0629 \u0627\u0644\u0628\u062f\u0646\u064a\u0629 \u0648\u0627\u0644\u0627\u0646\u0636\u0628\u0627\u0637 \u0627\u0644\u0639\u0642\u0644\u064a.',
+caliSkills:[{name:'Planche',percent:60},{name:'Front Lever',percent:50},{name:'Muscle Up',percent:85},{name:'Handstand',percent:70},{name:'Human Flag',percent:40},{name:'L-Sit',percent:75}],
+caliStats:[{label:'\u0645\u062f\u0629 \u0627\u0644\u062a\u0645\u0631\u064a\u0646',value:'\u0633\u0646\u062a\u0627\u0646+'},{label:'\u062a\u0645\u0627\u0631\u064a\u0646/\u0623\u0633\u0628\u0648\u0639',value:'5-6'},{label:'\u0645\u0633\u062a\u0648\u0649',value:'\u0645\u062a\u0642\u062f\u0645'},{label:'\u0627\u0644\u062a\u062e\u0635\u0635',value:'\u062d\u0631\u0643\u0627\u062a \u0645\u062a\u0642\u062f\u0645\u0629'}],
+caliAchievements:[{title:'[\u0625\u0646\u062c\u0627\u0632]',desc:'[\u0648\u0635\u0641]',year:'[\u0627\u0644\u0633\u0646\u0629]'}],
+gameOverview:'\u0623\u0637\u0648\u0631 \u0623\u0644\u0639\u0627\u0628\u0627\u064b \u062a\u062c\u0645\u0639 \u0628\u064a\u0646 \u0627\u0644\u0645\u062a\u0639\u0629 \u0648\u0627\u0644\u062a\u0639\u0644\u0645. \u0623\u0631\u0643\u0632 \u0639\u0644\u0649 \u062a\u0635\u0645\u064a\u0645 \u0627\u0644\u0645\u064a\u0643\u0627\u0646\u064a\u0643\u064a\u0627\u062a \u0648\u0628\u0646\u0627\u0621 \u062a\u062c\u0627\u0631\u0628 \u062a\u0641\u0627\u0639\u0644\u064a\u0629 \u0641\u0631\u064a\u062f\u0629.',
+gameSkills:[{name:'Unity / C#',percent:70},{name:'\u062a\u0635\u0645\u064a\u0645 \u0627\u0644\u0645\u064a\u0643\u0627\u0646\u064a\u0643\u064a\u0627\u062a',percent:65},{name:'\u062a\u0635\u0645\u064a\u0645 \u0627\u0644\u0645\u0631\u0627\u062d\u0644',percent:60},{name:'\u0628\u0631\u0645\u062c\u0629 \u0627\u0644\u0623\u0644\u0639\u0627\u0628',percent:70},{name:'Godot / GDScript',percent:45},{name:'Pixel Art',percent:55}],
+gameTools:['Unity','Godot','Blender','Aseprite','FMOD','Photoshop'],
+gameProjects:[{name:'[\u0627\u0644\u0644\u0639\u0628\u0629]',desc:'[\u0627\u0644\u0648\u0635\u0641]',tools:'Unity, C#',skills:'\u062a\u0635\u0645\u064a\u0645 \u0623\u0644\u0639\u0627\u0628',link:'#'}],
+eduOverview:'\u0623\u0633\u0639\u0649 \u0644\u062d\u0635\u0648\u0644 \u062a\u0639\u0644\u064a\u0645 \u0634\u0627\u0645\u0644 \u064a\u062c\u0645\u0639 \u0628\u064a\u0646 \u0627\u0644\u0646\u0638\u0631\u064a\u0629 \u0648\u0627\u0644\u062a\u0637\u0628\u064a\u0642.',
+eduCourses:[{name:'[\u0627\u0644\u0645\u0627\u062f\u0629]',code:'[\u0627\u0644\u0643\u0648\u062f]',grade:'[\u0627\u0644\u062f\u0631\u062c\u0629]'}],
+eduCerts:[{name:'[\u0627\u0644\u0634\u0647\u0627\u062f\u0629]',issuer:'[\u0627\u0644\u062c\u0647\u0629]',year:'[\u0627\u0644\u0633\u0646\u0629]'}],
+eduWorkshops:[{name:'[\u0627\u0644\u0648\u0631\u0634\u0629]',org:'[\u0627\u0644\u062c\u0647\u0629]',year:'[\u0627\u0644\u0633\u0646\u0629]'}],
+achievements:[{title:'[\u0627\u0644\u062c\u0627\u0626\u0632\u0629]',org:'[\u0627\u0644\u062c\u0647\u0629]',year:'[\u0627\u0644\u0633\u0646\u0629]',icon:'trophy'}],
+contactName:'[\u0627\u0644\u0627\u0633\u0645]',contactEmail:'[\u0627\u0644\u0628\u0631\u064a\u062f]',contactPhone:'[\u0627\u0644\u0647\u0627\u062a\u0641]',contactLocation:'[\u0627\u0644\u0645\u062f\u064a\u0646\u0629]',
+linkedin:'#',github:'#',itchio:'#',twitter:'#',instagram:'#',
+contactClosing:'\u064a\u0633\u0639\u062f\u0646\u064a \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0644\u0644\u062a\u0639\u0627\u0648\u0646 \u0623\u0648 \u0645\u0646\u0627\u0642\u0634\u0629 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0648\u0627\u0644\u0641\u0631\u0635.',
+adminPassword:'1234'
+};
+
+var siteData={};
+function loadData(){var s=localStorage.getItem('portfolioData');if(s){try{siteData=JSON.parse(s)}catch(e){siteData=JSON.parse(JSON.stringify(DEFAULT_DATA))}}else{siteData=JSON.parse(JSON.stringify(DEFAULT_DATA))}}
+function saveData(){localStorage.setItem('portfolioData',JSON.stringify(siteData))}
+
+/* ===== ESCAPE HTML ===== */
+function esc(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+/* ===== RENDER ALL ===== */
+function renderAll(){
+var d=siteData;
+document.title='Portfolio | '+d.name;
+var heroN=document.querySelector('.hero-name');if(heroN)heroN.textContent=d.name;
+var heroB=document.querySelector('.hero-bio');if(heroB)heroB.textContent=d.bio;
+var heroI=document.querySelector('.hero-indicators');if(heroI)heroI.innerHTML='<span class="indicator"><i class="fas fa-circle"></i> '+esc(d.university)+'</span><span class="indicator"><i class="fas fa-circle"></i> '+esc(d.major)+'</span><span class="indicator"><i class="fas fa-circle"></i> '+esc(d.level)+'</span>';
+var nb=document.querySelector('.nav-brand');if(nb)nb.innerHTML=esc(d.name)+'<span>.dev</span>';
+
+// Cyber
+document.querySelector('#cyber .ss').textContent=d.cyberOverview;
+var csg=document.querySelector('#cyber .skills-grid');if(csg)csg.innerHTML=d.cyberSkills.map(function(s){return '<div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-shield-halved" style="color:var(--ac)"></i> '+esc(s.name)+'</span><span class="skill-percent">'+s.percent+'%</span></div><div class="skill-bar"><div class="skill-fill" data-width="'+s.percent+'" style="background:linear-gradient(90deg,var(--ac),#00b8d4)"></div></div></div>'}).join('');
+var ctl=document.querySelector('#cyber .tools-list');if(ctl)ctl.innerHTML=d.cyberTools.map(function(t){return '<span class="tool-tag" style="background:var(--acs);color:var(--ac);border-color:rgba(0,229,255,.15)">'+esc(t)+'</span>'}).join('');
+var ccl=document.querySelector('#cyber .certs-list');if(ccl)ccl.innerHTML=d.cyberCerts.map(function(c){return '<div class="cert-item"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-details"><h4>'+esc(c.name)+'</h4><p>'+esc(c.issuer)+' \u2014 '+esc(c.year)+'</p></div></div>'}).join('');
+var cpg=document.querySelector('#cyber .projects-grid');if(cpg)cpg.innerHTML=d.cyberProjects.map(function(p){return '<div class="project-card"><span class="project-badge badge-cyber"><i class="fas fa-shield-halved"></i> \u0623\u0645\u0646 \u0633\u064a\u0628\u0631\u0627\u0646\u064a</span><h3 class="project-name">'+esc(p.name)+'</h3><p class="project-desc">'+esc(p.desc)+'</p><div class="project-tools">'+p.tools.split(',').map(function(t){return '<span class="tool-tag">'+esc(t.trim())+'</span>'}).join('')+'</div><div class="project-skills">'+p.skills.split(',').map(function(s){return '<span class="pskill-tag">'+esc(s.trim())+'</span>'}).join('')+'</div>'+(p.link&&p.link!=='#'?'<a href="'+esc(p.link)+'" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> \u0639\u0631\u0636</a>':'')+'</div>'}).join('');
+
+// Cali
+var clOv=document.querySelector('#calisthenics .ss');if(clOv)clOv.textContent=d.caliOverview;
+var csg2=document.querySelector('#calisthenics .skills-grid');if(csg2)csg2.innerHTML=d.caliSkills.map(function(s){return '<div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-fire" style="color:var(--al)"></i> '+esc(s.name)+'</span><span class="skill-percent">'+s.percent+'%</span></div><div class="skill-bar"><div class="skill-fill" data-width="'+s.percent+'" style="background:linear-gradient(90deg,var(--al),#ff9100)"></div></div></div>'}).join('');
+var cst=document.querySelector('#calisthenics .stats-grid');if(cst)cst.innerHTML=d.caliStats.map(function(s){return '<div class="stat-card"><div class="stat-value">'+esc(s.value)+'</div><div class="stat-label">'+esc(s.label)+'</div></div>'}).join('');
+var caG=document.querySelector('#calisthenics .achievements-grid');if(caG)caG.innerHTML=d.caliAchievements.map(function(a){return '<div class="achievement-card"><div class="achievement-icon medal"><i class="fas fa-medal"></i></div><div class="achievement-info"><h4>'+esc(a.title)+'</h4><p>'+esc(a.desc)+' \u2014 '+esc(a.year)+'</p></div></div>'}).join('');
+
+// Game
+var gmOv=document.querySelector('#gamedev .ss');if(gmOv)gmOv.textContent=d.gameOverview;
+var gsg=document.querySelector('#gamedev .skills-grid');if(gsg)gsg.innerHTML=d.gameSkills.map(function(s){return '<div class="skill-item"><div class="skill-header"><span class="skill-name"><i class="fas fa-code" style="color:var(--av)"></i> '+esc(s.name)+'</span><span class="skill-percent">'+s.percent+'%</span></div><div class="skill-bar"><div class="skill-fill" data-width="'+s.percent+'" style="background:linear-gradient(90deg,var(--av),#b388ff)"></div></div></div>'}).join('');
+var gtl=document.querySelector('#gamedev .tools-list');if(gtl)gtl.innerHTML=d.gameTools.map(function(t){return '<span class="tool-tag" style="background:var(--avs);color:var(--av);border-color:rgba(124,77,255,.15)">'+esc(t)+'</span>'}).join('');
+var gpg=document.querySelector('#gamedev .projects-grid');if(gpg)gpg.innerHTML=d.gameProjects.map(function(p){return '<div class="project-card"><span class="project-badge badge-game"><i class="fas fa-gamepad"></i> \u062a\u0637\u0648\u064a\u0631 \u0623\u0644\u0639\u0627\u0628</span><h3 class="project-name">'+esc(p.name)+'</h3><p class="project-desc">'+esc(p.desc)+'</p><div class="project-tools">'+p.tools.split(',').map(function(t){return '<span class="tool-tag">'+esc(t.trim())+'</span>'}).join('')+'</div><div class="project-skills">'+p.skills.split(',').map(function(s){return '<span class="pskill-tag">'+esc(s.trim())+'</span>'}).join('')+'</div>'+(p.link&&p.link!=='#'?'<a href="'+esc(p.link)+'" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> \u0639\u0631\u0636</a>':'')+'</div>'}).join('');
+
+// Education
+var edOv=document.querySelector('#education .ss');if(edOv)edOv.textContent=d.eduOverview;
+var ecrs=document.querySelector('#education .edu-rows');if(ecrs)ecrs.innerHTML=d.eduCourses.map(function(c){return '<div class="edu-row"><div class="edu-icon"><i class="fas fa-book-open"></i></div><div class="edu-details"><h4>'+esc(c.name)+'</h4><p>'+esc(c.code)+' \u2014 '+esc(c.grade)+'</p></div></div>'}).join('');
+var ecrt=document.querySelector('#education .cert-rows');if(ecrt)ecrt.innerHTML=d.eduCerts.map(function(c){return '<div class="edu-row"><div class="edu-icon" style="background:var(--ags);color:var(--ag);"><i class="fas fa-certificate"></i></div><div class="edu-details"><h4>'+esc(c.name)+'</h4><p>'+esc(c.issuer)+' \u2014 '+esc(c.year)+'</p></div></div>'}).join('');
+var ewrk=document.querySelector('#education .workshop-rows');if(ewrk)ewrk.innerHTML=d.eduWorkshops.map(function(w){return '<div class="edu-row"><div class="edu-icon" style="background:var(--ags);color:var(--ag);"><i class="fas fa-chalkboard"></i></div><div class="edu-details"><h4>'+esc(w.name)+'</h4><p>'+esc(w.org)+' \u2014 '+esc(w.year)+'</p></div></div>'}).join('');
+
+// Update university card
+var eduCards=document.querySelectorAll('#education .education-card');
+if(eduCards[0]){eduCards[0].innerHTML='<h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-university" style="color:var(--ab);"></i> \u0627\u0644\u062c\u0627\u0645\u0639\u0629</h3><div class="edu-row"><div class="edu-icon"><i class="fas fa-university"></i></div><div class="edu-details"><h4>'+esc(d.university)+'</h4><p>'+esc(d.major)+' \u2014 '+esc(d.level)+'</p></div></div><div class="edu-row"><div class="edu-icon" style="background:var(--ags);color:var(--ag);"><i class="fas fa-chart-line"></i></div><div class="edu-details"><h4>\u0627\u0644\u0645\u0639\u062f\u0644 \u0627\u0644\u062a\u0631\u0627\u0643\u0645\u064a</h4><p>'+esc(d.gpa)+'</p></div></div>';}
+if(eduCards[1]){eduCards[1].innerHTML='<h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-user-graduate" style="color:var(--ag);"></i> \u0627\u0644\u0646\u0628\u0630\u0629 \u0627\u0644\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629</h3><p style="color:var(--t1);font-size:.9rem;line-height:2;">'+esc(d.academicBio)+'</p>';}
+if(eduCards[2]){eduCards[2].innerHTML='<h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-heart" style="color:#f44336;"></i> \u0627\u0644\u0642\u064a\u0645 \u0648\u0627\u0644\u0634\u063a\u0641</h3><p style="color:var(--t1);font-size:.9rem;line-height:2;">'+esc(d.motto)+'</p>';}
+
+// Achievements
+var ag=document.querySelector('#achievements .achievements-grid');if(ag){var icons=['trophy','star','medal'];ag.innerHTML=d.achievements.map(function(a,i){return '<div class="achievement-card"><div class="achievement-icon '+icons[i%3]+'"><i class="fas fa-'+esc(a.icon||icons[i%3])+'"></i></div><div class="achievement-info"><h4>'+esc(a.title)+'</h4><p>'+esc(a.org)+' \u2014 '+esc(a.year)+'</p></div></div>'}).join('')}
+
+// Contact
+var ci=document.getElementById('contactInfoList');if(ci)ci.innerHTML=
+'<div class="contact-item"><div class="contact-item-icon"><i class="fas fa-user"></i></div><div class="contact-item-info"><h5>\u0627\u0644\u0627\u0633\u0645</h5><p>'+esc(d.contactName)+'</p></div></div>'+
+'<div class="contact-item"><div class="contact-item-icon"><i class="fas fa-envelope"></i></div><div class="contact-item-info"><h5>\u0627\u0644\u0628\u0631\u064a\u062f</h5><p><a href="mailto:'+esc(d.contactEmail)+'">'+esc(d.contactEmail)+'</a></p></div></div>'+
+'<div class="contact-item"><div class="contact-item-icon"><i class="fas fa-phone"></i></div><div class="contact-item-info"><h5>\u0627\u0644\u0647\u0627\u062a\u0641</h5><p>'+esc(d.contactPhone)+'</p></div></div>'+
+'<div class="contact-item"><div class="contact-item-icon"><i class="fas fa-location-dot"></i></div><div class="contact-item-info"><h5>\u0627\u0644\u0645\u062f\u064a\u0646\u0629</h5><p>'+esc(d.contactLocation)+'</p></div></div>'+
+'<div class="contact-item"><div class="contact-item-icon"><i class="fab fa-linkedin"></i></div><div class="contact-item-info"><h5>LinkedIn</h5><p><a href="'+esc(d.linkedin)+'">'+esc(d.linkedin)+'</a></p></div></div>'+
+'<div class="contact-item"><div class="contact-item-icon"><i class="fab fa-github"></i></div><div class="contact-item-info"><h5>GitHub</h5><p><a href="'+esc(d.github)+'">'+esc(d.github)+'</a></p></div></div>'+
+'<div class="contact-item"><div class="contact-item-icon"><i class="fas fa-gamepad"></i></div><div class="contact-item-info"><h5>Itch.io</h5><p><a href="'+esc(d.itchio)+'">'+esc(d.itchio)+'</a></p></div></div>'+
+'<div class="social-links"><a href="'+esc(d.linkedin)+'" class="social-link"><i class="fab fa-linkedin-in"></i></a><a href="'+esc(d.github)+'" class="social-link"><i class="fab fa-github"></i></a><a href="'+esc(d.itchio)+'" class="social-link"><i class="fas fa-gamepad"></i></a><a href="'+esc(d.twitter)+'" class="social-link"><i class="fab fa-x-twitter"></i></a><a href="'+esc(d.instagram)+'" class="social-link"><i class="fab fa-instagram"></i></a></div>';
+
+var cc=document.querySelector('.contact-closing p');if(cc)cc.textContent=d.contactClosing;
+var ft=document.querySelector('.footer p');if(ft)ft.innerHTML='\u00a9 2026 '+esc(d.name)+' \u2014 \u0635\u064f\u0645\u0651\u0645 \u0628\u0640 <span class="heart">\u2764</span> \u0648\u0634\u063a\u0641';
+
+reobserve();
+}
+
+
+loadData();renderAll();
+</script>
+
+</body></html>
